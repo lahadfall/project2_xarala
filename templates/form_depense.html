@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{%block content%}
+
+<div class="titre_form">
+    <h6>AJOUTER DEPENSE </h6>
+</div>
+<form action="/" method="POST">
+
+    <div class="form-row">
+        <div class="col-sm-10 my-1">
+            <label for="titre">TITRE :</label>
+            <input type="text" name="titre" id="titre" class="form-control" placeholder="Ajouter un titre" required><br>
+            <label for="montant">MONTANT :</label>
+            <input type="number" name="montant" id="montant" class="form-control" placeholder="Montant en fr cfa" required min="0"><br>
+            <input type="hidden" name="type" value="Depense">
+        </div>
+        <div class="col-sm-2 my-1">
+            <button type="submit" class="btn btn-danger">Ajouter</button>
+        </div>
+    </div>
+    
+    </form>
+{%endblock%}   

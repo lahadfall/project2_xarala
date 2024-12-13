@@ -1,0 +1,177 @@
+body {
+    background-color:aliceblue;
+    margin: 0;
+}
+
+#navbar {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: lightskyblue;
+    font-size: 1.1em;
+    color: #333;
+}
+
+#navbar-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+}
+
+.navbar-item {
+    margin: 0 10px;
+}
+
+.navbar-item.login-logout {
+    margin-left: auto;
+}
+
+.navbar-item a {
+    text-decoration: none;
+    display: block;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar-item a:hover {
+    color: #fcfcfc;
+}
+
+.titre{
+     margin: 10vh,10vh;
+     text-align: center;
+     font-size: 0.5em;
+     margin-bottom: 0;
+     padding: 20px;
+}
+
+.titre h1{
+    color:  #2c3e50;
+    margin-top: 0;
+    font-size: small;
+}
+
+.carte{
+    width: 80%; 
+    display: flex;
+    margin: 20vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+
+}
+.card.text-white.bg-primary.mb-3{
+    border: 1px solid #004085;
+    text-align: center;
+    margin: 5px auto;
+    padding: 30px auto;
+    width: 35vh ;
+}
+
+.card.text-white.bg-primary.mb-3 .card-header {
+    font-size: 1.25rem; /* Taille du texte pour l'en-tête */
+    font-weight: bold; /* Gras pour le texte */
+    background-color: #2c3e50;    /* Couleur légèrement différente pour l'en-tête */
+    padding: 5px;
+}
+
+.card.text-white.bg-primary.mb-3 .card-body {
+    padding: 10px; /* Espacement intérieur pour le contenu */
+    font-size: 1rem; /* Taille du texte */
+    background-color: #fff;
+    color: black;
+
+}
+
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #2980b9;
+}
+/* Table styles */
+
+.my_table {
+    margin-bottom: 5vh;
+    margin-left: 24vh;
+    width: 90%; /* Ajuste la largeur pour éviter le débordement */
+}
+table {
+    width: 83%;
+    margin: 5px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+table thead {
+    background-color: #2c3e50;
+    color: #fff;
+
+}
+table th, table td {
+    padding: 10px; /* Ajoute plus d'espace autour du contenu */
+    text-align: center;
+    border: 1px solid #ddd; /* Bordure fine et discrète */
+}
+.my_table h3{
+    font-size: 1rem;
+    color: rgb(219, 185, 34);
+}
+/* Hover Effect */
+table tr:hover {
+    background-color: #f1f1f1; /* Surligne la ligne sous la souris */
+}
+
+
+/* Form styles */
+form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.titre_form h6{
+    width: 50%;
+    margin: 80px auto;
+    margin-bottom: 0;
+    padding: 5px;
+}
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight:bold;
+}
+form input[type="text"],
+form input[type="number"],
+form input[type="submit"] {
+    width: calc(100% - 20px);
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* Button styles */
+button {
+    padding: 5px;
+    border: none;
+    background-color:   rgb(224, 201, 95);
+    color: white;
+    font-size: 0.5rem;
+    cursor: pointer;
+    margin: 10px;
+}
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9em; /* Réduit la taille de police */
+    }
+}

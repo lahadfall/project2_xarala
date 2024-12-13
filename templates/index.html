@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="carte">
+    <!-- Carte Budget -->
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Budget</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ budget }} F CFA</h5>
+        </div>
+    </div>
+
+    <!-- Carte Revenus -->
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Dépense</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ total_depenses }} F CFA</h5>
+        </div>
+    </div>
+
+    <!-- Carte Solde -->
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Solde</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ solde }} F CFA</h5>
+        </div>
+    </div>
+</div>
+
+<!-- Liste des Dépenses -->
+<div class="my_table">
+    <h3>Liste des Dépenses</h3>
+    {% if depenses %}
+    <table class="" border='1'>
+        <thead>
+            <tr>
+                <th>TITRE</th>
+                <th>MONTANT</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for depense in depenses %}
+            <tr>
+                <td>{{ depense.titre }}</td>
+                <td>{{ depense.montant }} F CFA</td>
+                <td>
+                    <a href="/delete_depense/{{ depense.id }}/"><button class="btn btn-danger">Supprimer</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Aucune dépense enregistrée pour le moment.</p>
+    {% endif %}
+    <div class="col-sm-2 my-1">
+        <a href="{{ url_for('depense') }}"><button class="button">AJOUTER DÉPENSE</button></a>
+    </div>
+</div>
+
+
+
+<!-- Liste des Revenus -->
+<div class="my_table">
+    <h3>Liste des Revenus</h3>
+    {% if revenus %}
+    <table class="" border='1'>
+        <thead>
+            <tr>
+                <th>TITRE</th>
+                <th>MONTANT</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for revenu in revenus %}
+            <tr>
+                <td>{{ revenu.titre }}</td>
+                <td>{{ revenu.montant }} F CFA</td>
+                <td>
+                    <a href="/delete_revenue/{{ revenu.id }}/"><button class="btn btn-danger">Supprimer</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Aucun revenu enregistré pour le moment.</p>
+    {% endif %}
+    <div class="col-sm-2 my-1">
+        <a href="{{ url_for('revenue') }}"><button class="button">AJOUTER REVENUS</button></a>
+    </div>
+</div>
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div>
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% endwith %}
+
+
+{% endblock %}
